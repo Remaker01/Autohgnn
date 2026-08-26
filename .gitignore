@@ -1,0 +1,61 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 打包 / 分发
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+venv.bak/
+
+# 测试 / 静态检查缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ===== IDE / 编辑器 =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===== 数据集（体积大，按需下载）=====
+dataset/
+
+# ===== 实验结果 / 输出 =====
+Performance/
+TopGNNHPO/
+pic/
+
+# 实验输出文件/文档等（如需跟踪请用 !实验结果.xlsx 反向排除）
+*.xlsx
+*.docx
+*.xls
+*.doc
+
+# 日志
+*.log
+logs/
+hyper_search_space_gnn_candidates.txt
