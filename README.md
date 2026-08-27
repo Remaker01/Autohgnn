@@ -1,7 +1,10 @@
 ## AutoHGNN: Robust and efficient neural architecture search for hypergraph neural networks
 
 Codes for [AutoHGNN: Robust and efficient neural architecture search for hypergraph neural networks](https://doi.org/10.1016/j.knosys.2026.116609)
-Based on code for `D2GNAS`
+
+Based on codes for `D2GNAS`
+
+![架构图](figure.jpg "Figure")
 
 ## License
 
