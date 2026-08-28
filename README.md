@@ -4,7 +4,7 @@ Codes for [AutoHGNN: Robust and efficient neural architecture search for hypergr
 
 Based on codes for `D2GNAS`
 
-![架构图](figure.jpg "Figure")
+![架构图](main.jpg "Main Figure")
 
 ## License
 

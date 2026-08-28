@@ -8,6 +8,7 @@ from multi_trial_gnas.multi_trail_evaluation import MultiTrailEvaluation
 
 import utils
 
+@utils.deprecated
 def read_top_gnn(search_strategy,
                  data):
 
@@ -151,44 +152,4 @@ def best_validation_architecture(search_strategy, data, graph, device, gnn_train
     return best_val_gnn_architecture
 
 if __name__ == "__main__":
-
-    data_list = ["Computers", "Photo", "Pubmed"]
-    strategy_list = ["D2GNAS", "GraphNAS", "AutoGraph", "AutoGNAS", "DeepGNAS", "DDS", "DARTS"]
-
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
-    # default config
-    tuning_epoch = 200
-    gnn_train_epoch = 30
-    gnn_test_train_epoch = 100
-    test_epoch = 10
-    validation_training_epoch = 100
-
-    for strategy in strategy_list:
-        for data in data_list:
-            graph = GraphData(data, shuffle=False).data
-            top_gnn = best_validation_architecture(strategy, data, graph, device, validation_training_epoch)
-            print("the best gnn:", top_gnn)
-            information = strategy + "_" + data
-
-            learning_rate, weight_decay, node_element_dropout_probability, edge_dropout_probability, hidden_dimension = hpo(gnn_architecture=top_gnn,
-                                                                                                                            graph=graph,
-                                                                                                                            device=device,
-                                                                                                                            tuning_epoch=tuning_epoch,
-                                                                                                                            gnn_train_epoch=gnn_train_epoch,
-                                                                                                                            data=data,
-                                                                                                                            search_strategy=strategy)
-
-            test_record(graph=graph,
-                        gnn_architecture=top_gnn,
-                        learning_rate=learning_rate,
-                        weight_decay=weight_decay,
-                        node_element_dropout_probability=node_element_dropout_probability,
-                        edge_dropout_probability=edge_dropout_probability,
-                        gnn_train_epoch=gnn_test_train_epoch,
-                        hidden_dimension=hidden_dimension,
-                        device=device,
-                        test_epoch=test_epoch,
-                        data=data,
-                        search_strategy=strategy)
-
+    pass
